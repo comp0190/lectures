@@ -3,7 +3,19 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: "Conducting systematic reviews"
+    chapters:
+      - file: topics/1_systematic_reviews/overview
+  - caption: "Ethics in artificial intelligence"
+    chapters:
+      - file: topics/2_ethics/overview
+  - caption: "Git, hyperparameter tuning, and logging"
+    chapters:
+      - file: topics/3_tuning/overview
+  - caption: "Cloud, big data, and Docker"
+    chapters:
+      - file: topics/4_cloud/overview
+  - caption: "Data visualisation"
+    chapters:
+      - file: topics/5_visualisation/overview
