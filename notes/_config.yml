@@ -4,6 +4,7 @@
 title: Artificial Intelligence for Domain-Specific Applications Project Preparation (COMP0190)
 author: UCL
 logo: ucl_logo.png
+copyright: "2023"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -21,9 +22,9 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/comp0190/lectures  # Online location of your book
+  path_to_book: notes  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
