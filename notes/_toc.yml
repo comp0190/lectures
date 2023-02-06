@@ -13,6 +13,10 @@ parts:
   - caption: "Git, hyperparameter tuning, and logging"
     chapters:
       - file: topics/3_tuning/overview
+      - file: topics/3_tuning/git
+      - file: topics/3_tuning/hyperparameter_tuning
+      - file: topics/3_tuning/logging
+      - file: topics/3_tuning/tutorial
   - caption: "Cloud, big data, and Docker"
     chapters:
       - file: topics/4_cloud/overview

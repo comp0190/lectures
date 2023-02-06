@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.2 Git &#8212; Artificial Intelligence for Domain-Specific Applications Project Preparation (COMP0190)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.3 Hyperparameter Tuning" href="hyperparameter_tuning.html" />
+    <link rel="prev" title="3.1 Overview" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/ucl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Artificial Intelligence for Domain-Specific Applications Project Preparation (COMP0190)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Conducting systematic reviews
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_systematic_reviews/overview.html">
+   1.1 Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ethics in artificial intelligence
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_ethics/overview.html">
+   2.1 Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Git, hyperparameter tuning, and logging
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   3.1 Overview
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3.2 Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyperparameter_tuning.html">
+   3.3 Hyperparameter Tuning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logging.html">
+   3.4 Logging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial.html">
+   3.5 Tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Cloud, big data, and Docker
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_cloud/overview.html">
+   4.1 Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data visualisation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_visualisation/overview.html">
+   5.1 Overview
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/comp0190/lectures"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/comp0190/lectures/issues/new?title=Issue%20on%20page%20%2Ftopics/3_tuning/git.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/topics/3_tuning/git.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-should-we-add-to-git">
+   What should we add to Git?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#developing">
+   Developing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing">
+     Installing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialising-your-repository">
+     Initialising your repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-your-git-details">
+     Configuring your git details
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-files">
+     Adding files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>3.2 Git</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-should-we-add-to-git">
+   What should we add to Git?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#developing">
+   Developing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing">
+     Installing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialising-your-repository">
+     Initialising your repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-your-git-details">
+     Configuring your git details
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-files">
+     Adding files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="git">
+<h1>3.2 Git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h1>
+<p>Git is a type of version control system. It allows you to keep track of changes to your code and to collaborate with others.</p>
+<p>Why is it a good idea to use version control? You can:</p>
+<ul class="simple">
+<li><p><strong>Backup your code</strong> without making separate copies of it.</p></li>
+<li><p><strong>Review what you’ve changed</strong>.</p></li>
+<li><p><strong>Reverse mistakes</strong>.</p></li>
+<li><p>Maintain <strong>several versions</strong> of your code at the same time.</p></li>
+<li><p><strong>Share your code</strong> with others.</p></li>
+</ul>
+<p>Git is not the same as GitHub. <a class="reference external" href="https://github.com">GitHub</a> is a website that hosts Git repositories. You can use Git without GitHub, but GitHub (or similar websites like GitLab or BitBucket) is a good place to store your code.</p>
+<p>We will only cover the basics of Git here. The most basic Git workflow is as follows:</p>
+<ul class="simple">
+<li><p>Make changes to your code in the working directory.</p></li>
+<li><p>Stage the changes you want to commit.</p></li>
+<li><p>Commit the changes to the repository.</p></li>
+</ul>
+<section id="what-should-we-add-to-git">
+<h2>What should we add to Git?<a class="headerlink" href="#what-should-we-add-to-git" title="Permalink to this headline">#</a></h2>
+<p>You should add all of your code to Git. Things you should not add to Git include:</p>
+<ul class="simple">
+<li><p>Files that are unrelated to your project (e.g. <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code> files).</p></li>
+<li><p>Files that are generated by your code (e.g. <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files).</p></li>
+<li><p>Large data files.</p></li>
+<li><p>Files that contain sensitive information (e.g. passwords).</p></li>
+</ul>
+</section>
+<section id="developing">
+<h2>Developing<a class="headerlink" href="#developing" title="Permalink to this headline">#</a></h2>
+<p>There are different types of Git workflows. The most basic workflow is to have one <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and to make changes to that. This is fine for small projects.</p>
+<p>For larger projects, it is better to have a <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and a <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. The <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch is where you make changes to your code. When you are ready to release a new version of your code, you merge the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<p>Let’s go through an example of how to use Git. We will create a new repository, add some files, and commit them.</p>
+<section id="installing">
+<h3>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">#</a></h3>
+<p>Firstly, you’ll need to install Git. You can do this by following the instructions <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a>.</p>
+</section>
+<section id="initialising-your-repository">
+<h3>Initialising your repository<a class="headerlink" href="#initialising-your-repository" title="Permalink to this headline">#</a></h3>
+<p>To create a new repository, you can either initialise Git in an existing directory, or create a new directory and initialise Git there. You can also retrieve an existing repository. In this example we will create a new directory.</p>
+<p>Name the new directory called <code class="docutils literal notranslate"><span class="pre">my_project</span></code> and navigate to it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>my_project
+<span class="nb">cd</span><span class="w"> </span>my_project
+</pre></div>
+</div>
+<p>We can check we are in the right directory with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>Initialise the directory with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
+</pre></div>
+</div>
+<p>This will initialise a Git repository and name the current branch <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+<p>If you want to retrieve an existing repository from online, you can do so with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;repository_url&gt;
+</pre></div>
+</div>
+</section>
+<section id="configuring-your-git-details">
+<h3>Configuring your git details<a class="headerlink" href="#configuring-your-git-details" title="Permalink to this headline">#</a></h3>
+<p>Before you start using Git, you’ll need to configure your Git details. You can do this with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your@email.com&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--global</span></code> flag means the configurations will apply to all of your repositories. If you don’t want to use the <code class="docutils literal notranslate"><span class="pre">--global</span></code> flag, you can omit it and the configurations will only apply to the current repository.</p>
+</section>
+<section id="adding-files">
+<h3>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this headline">#</a></h3>
+<p>Now that we have initialised our repository, we can add some files. In Unix operating systems we can create a new file with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>my_file.txt
+</pre></div>
+</div>
+<p>For Windows users, you can create a new file with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>echo.<span class="w"> </span>&gt;<span class="w"> </span>my_file.txt
+</pre></div>
+</div>
+<p>We can check that the file has been created by checking the contents of the directory with <code class="docutils literal notranslate"><span class="pre">ls</span></code> for Unix users and <code class="docutils literal notranslate"><span class="pre">dir</span></code> for Windows users.</p>
+<p>Now that we have created a file, we need add it to the repository so that Git can track it. We can do this with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>my_file.txt
+</pre></div>
+</div>
+<p>We can check that the file has been added with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>This will show us the status of the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On<span class="w"> </span>branch<span class="w"> </span>master
+
+No<span class="w"> </span>commits<span class="w"> </span>yet
+
+Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>committed:
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span>
+
+<span class="w">  </span>new<span class="w"> </span>file:<span class="w">   </span>my_file.txt
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will tell us which files have been added, which files have been modified, and which files have been deleted. If you are happy with your additions, the next step is to commit them. You can think of committing as taking a snapshot of your code. Commit your changes with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add my_file.txt&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag allows you to add a message to your commit. This is useful for keeping track of what changes you have made. You can also commit without a message, but you will be prompted to add one when you commit. It is good practice to add an informative message to your commits, so if you want to track the history you know what changes have been made.</p>
+<p>To view the history of your commits, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
+</pre></div>
+</div>
+<p>This will show you the history of your commits. You can use the arrow keys to scroll through the history if the list of commits is long. To exit, press <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>Let’s create a new branch to keep track of different versions of our code. One way of using branches is to keep track of various experiments. We will create a new branch called <code class="docutils literal notranslate"><span class="pre">develop</span></code> and switch to it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>develop
+</pre></div>
+</div>
+<p>We can check we are on the right branch by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>. This will list all of the branches in the repository. The branch with a <code class="docutils literal notranslate"><span class="pre">*</span></code> next to it is the current branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">develop</span>
+  <span class="n">master</span>
+</pre></div>
+</div>
+<p>If you make changes to <code class="docutils literal notranslate"><span class="pre">my_file.txt</span></code> using your favourite text editor, you can see the differences between the current version of the file and the version in the repository with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff<span class="w"> </span>my_file.txt
+</pre></div>
+</div>
+<p>We’ll commit the changes to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">my_file.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Add</span> <span class="pre">some</span> <span class="pre">text</span> <span class="pre">to</span> <span class="pre">my_file.txt&quot;</span></code>.</p>
+<p>Then we can switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+</pre></div>
+</div>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">my_file.txt</span></code>, we will see that there are no differences between the current version of the file and the version in the repository. This is because we have not made any changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. If you want to merge the changes from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, you can do so with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>develop
+</pre></div>
+</div>
+<p>Then if you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> again, you can see the commit from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch has been added into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
+<p>Finally, if you are happy with your changes, you can push them to a remote repository. <code class="docutils literal notranslate"><span class="pre">origin</span></code> refers to the remote repository in the below command. If you have not set up a remote repository, set up a project on a website with github. After you’ve done that, you integrate the remote repository with your local repository with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;repository_url&gt;
+</pre></div>
+</div>
+<p>To push the changes, you can then do this with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>develop
+</pre></div>
+</div>
+<p>Note you do not need to use the command line to use Git. There are many graphical user interfaces (GUIs) available for Git. You can use the command line, or a GUI, whichever you prefer. vscode for example has a built in Git GUI (documentation <a class="reference external" href="https://code.visualstudio.com/docs/sourcecontrol/overview">here</a>).</p>
+</section>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<p>If you want to learn more, check out the following:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/doc">Git documentation</a></p></li>
+<li><p><a class="reference external" href="https://git-lectures.github.io/">Git lectures</a></p></li>
+<li><p><a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./topics\3_tuning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">3.1 Overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="hyperparameter_tuning.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3.3 Hyperparameter Tuning</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By UCL<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

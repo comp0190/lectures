@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4.1 Overview &#8212; Artificial Intelligence for Domain-Specific Applications Project Preparation (COMP0190)</title>
+    <title>3.5 Tutorial &#8212; Artificial Intelligence for Domain-Specific Applications Project Preparation (COMP0190)</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.1 Overview" href="../5_visualisation/overview.html" />
-    <link rel="prev" title="3.5 Tutorial" href="../3_tuning/tutorial.html" />
+    <link rel="next" title="4.1 Overview" href="../4_cloud/overview.html" />
+    <link rel="prev" title="3.4 Logging" href="logging.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,29 +142,29 @@ const thebe_selector_output = ".output, .cell_output"
   Git, hyperparameter tuning, and logging
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../3_tuning/overview.html">
+  <a class="reference internal" href="overview.html">
    3.1 Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../3_tuning/git.html">
+  <a class="reference internal" href="git.html">
    3.2 Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../3_tuning/hyperparameter_tuning.html">
+  <a class="reference internal" href="hyperparameter_tuning.html">
    3.3 Hyperparameter Tuning
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../3_tuning/logging.html">
+  <a class="reference internal" href="logging.html">
    3.4 Logging
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3_tuning/tutorial.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    3.5 Tutorial
   </a>
  </li>
@@ -174,9 +174,9 @@ const thebe_selector_output = ".output, .cell_output"
   Cloud, big data, and Docker
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_cloud/overview.html">
    4.1 Overview
   </a>
  </li>
@@ -243,6 +243,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/comp0190/lectures/main?urlpath=tree/notes/topics/3_tuning/tutorial.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -282,7 +311,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/comp0190/lectures/issues/new?title=Issue%20on%20page%20%2Ftopics/4_cloud/overview.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/comp0190/lectures/issues/new?title=Issue%20on%20page%20%2Ftopics/3_tuning/tutorial.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -310,7 +339,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/topics/4_cloud/overview.md"
+        <a href="../../_sources/topics/3_tuning/tutorial.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -321,7 +350,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -347,23 +376,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forking-the-repository-and-cloning-to-your-local-machine">
+   Forking the repository and cloning to your local machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-hyperparameter-tuning">
+   Implementing hyperparameter tuning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logging-the-results-of-your-experiments">
+   Logging the results of your experiments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#committing-your-changes-and-pushing-to-your-remote-repository">
+   Committing your changes and pushing to your remote repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-creating-a-pull-request">
+   Bonus! - Creating a pull request
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>4.1 Overview</h1>
+                <h1>3.5 Tutorial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forking-the-repository-and-cloning-to-your-local-machine">
+   Forking the repository and cloning to your local machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-hyperparameter-tuning">
+   Implementing hyperparameter tuning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logging-the-results-of-your-experiments">
+   Logging the results of your experiments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#committing-your-changes-and-pushing-to-your-remote-repository">
+   Committing your changes and pushing to your remote repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-creating-a-pull-request">
+   Bonus! - Creating a pull request
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -371,8 +477,53 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>4.1 Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial">
+<h1>3.5 Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h1>
+<p>In this tutorial we will put into practice the concepts we have learned in the previous sections.</p>
+<p>The task is as follows:</p>
+<ol class="simple">
+<li><p>Fork the <a class="reference external" href="https://github.com/comp0190/git_tutorial">Git tutorial repository</a></p></li>
+<li><p>Clone the repository to your local machine</p></li>
+<li><p>Create a new branch</p></li>
+<li><p>Edit the Python script to implement hyperparameter tuning and logging</p></li>
+<li><p>Push your changes to your remote repository</p></li>
+<li><p><strong>Bonus!</strong> - Create a pull request to merge your changes into the original <a class="reference external" href="https://github.com/comp0190/git_tutorial">Git tutorial repository</a></p></li>
+</ol>
+<p>Hints and tips are provided below. Feel free to also refer to the previous sections for more information.</p>
+<section id="forking-the-repository-and-cloning-to-your-local-machine">
+<h2>Forking the repository and cloning to your local machine<a class="headerlink" href="#forking-the-repository-and-cloning-to-your-local-machine" title="Permalink to this headline">#</a></h2>
+<p>Firstly, install Git on your local machine. You can find instructions for doing this <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a>.</p>
+<p>To fork the repository, click the <strong>Fork</strong> button in the top right corner of the repository page.</p>
+<p>To clone the repository to your local machine, open a terminal and navigate to the directory where you want to clone the repository. Then run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;forked_repository_url&gt;
+</pre></div>
+</div>
+<p>Alternatively, you can use the <strong>Code</strong> button and clone the repository using <a class="reference external" href="https://desktop.github.com/">GitHub Desktop</a>.</p>
+<p>For an example of how to create a new branch, refer to <a class="reference internal" href="git.html"><span class="doc std std-doc">3.2 Git</span></a>.</p>
+</section>
+<section id="implementing-hyperparameter-tuning">
+<h2>Implementing hyperparameter tuning<a class="headerlink" href="#implementing-hyperparameter-tuning" title="Permalink to this headline">#</a></h2>
+<p>Open the Python file in your favourite text editor. We want to add grid search to find the best hyperparameters for our model. Check out the hyperparameter tuning slides and the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">grid search</a> documentation for more information on how to do this.</p>
+</section>
+<section id="logging-the-results-of-your-experiments">
+<h2>Logging the results of your experiments<a class="headerlink" href="#logging-the-results-of-your-experiments" title="Permalink to this headline">#</a></h2>
+<p>We want to log the results of our experiments so that we can compare them later. You can also log the hyperparameters used for each experiment so that you can easily see which hyperparameters were used for each experiment.</p>
+<p>You can refer to <a class="reference internal" href="logging.html"><span class="doc std std-doc">3.4 Logging</span></a> for more information on how to do this.</p>
+</section>
+<section id="committing-your-changes-and-pushing-to-your-remote-repository">
+<h2>Committing your changes and pushing to your remote repository<a class="headerlink" href="#committing-your-changes-and-pushing-to-your-remote-repository" title="Permalink to this headline">#</a></h2>
+<p>You should try and make regular commits to your local repository rather than combining different changes in one go. This will help you keep track of your changes and make it easier to revert to a previous version if you make a mistake.</p>
+<p>For an example of how to commit, refer to <a class="reference internal" href="git.html"><span class="doc std std-doc">3.2 Git</span></a></p>
+<p>To push your changes to your remote repository, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;branch_name&gt;
+</pre></div>
+</div>
+</section>
+<section id="bonus-creating-a-pull-request">
+<h2>Bonus! - Creating a pull request<a class="headerlink" href="#bonus-creating-a-pull-request" title="Permalink to this headline">#</a></h2>
+<p>If you want to share your changes with the rest of the class, you can create a pull request to merge your changes into the main repository.</p>
+<p>The GitHub documentation has a <a class="reference external" href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">guide</a> on how to do this.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,7 +539,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./topics\4_cloud"
+            path: "./topics\3_tuning"
         },
         predefinedOutput: true
     }
@@ -402,17 +553,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../3_tuning/tutorial.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="logging.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">3.5 Tutorial</p>
+            <p class="prev-next-title">3.4 Logging</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../5_visualisation/overview.html" title="next page">
+    <a class='right-next' id="next-link" href="../4_cloud/overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5.1 Overview</p>
+        <p class="prev-next-title">4.1 Overview</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
