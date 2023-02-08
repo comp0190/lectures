@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.5 Tutorial" href="tutorial.html" />
-    <link rel="prev" title="3.3 Hyperparameter Tuning" href="hyperparameter_tuning.html" />
+    <link rel="prev" title="3.3 Hyperparameter Optimisation" href="hyperparameter_tuning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Git, hyperparameter tuning, and logging
+  Git, hyperparameter optimisation, and logging
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hyperparameter_tuning.html">
-   3.3 Hyperparameter Tuning
+   3.3 Hyperparameter Optimisation
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -586,8 +586,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>We can log the messages to multiple places using handlers. By default, the logging library will use a <code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code> to direct log messages to the console. A logger can have multiple handlers, and each handler can have a different level of severity.</p>
 <p>To log messages to a file, we can use the <code class="docutils literal notranslate"><span class="pre">FileHandler</span></code>. We can then look at the contents later on to analyse the results of our experiments.</p>
-<p>However, if we are checking for outputs on the console, this will not display the messages. To display the messages on the console, we can use the <code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code>.</p>
+<p>However, if we are checking for outputs on the console, this will redirect all the messages to the file. To display the messages on the console again, we can initialise another <code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code>.</p>
 <p>In the following example, we will log the warning messages to a file. Note as we are using a Jupyter notebook, there is no need to use the <code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code> as it will duplicate the messages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,15 +599,41 @@ title="Print to PDF"
 <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 
+<span class="c1"># Create a stream handler</span>
+<span class="c1"># Note: Commented out for this demo because it causes duplicate output in Jupyter notebooks</span>
+<span class="c1"># ch = logging.StreamHandler()</span>
+<span class="c1"># ch.setLevel(logging.DEBUG)</span>
+<span class="c1"># logger.addHandler(ch)</span>
+
 <span class="c1"># Create a file handler and set level to warning</span>
 <span class="n">fh</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s1">&#39;test.log&#39;</span><span class="p">)</span>
 <span class="n">fh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
-
 <span class="c1"># Add handlers to logger</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
-
-<span class="c1"># Log code</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;This is a debug message&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also change how we format the messages. By default, the logging library will log messages in the following format: <code class="docutils literal notranslate"><span class="pre">level:logger_name:message</span></code>. We can change this by using the <code class="docutils literal notranslate"><span class="pre">format</span></code> argument:</p>
+<p>In the below example, we will reformat the message to include the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%(asctime)s</span></code> - The date and time of the message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%(name)s</span></code> - The name of the logger.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%(levelname)s</span></code> - The level of the message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%(message)s</span></code> - The logged message.</p></li>
+</ul>
+<p>For more information on how to format the messages, see the <a class="reference external" href="https://docs.python.org/3/library/logging.html#logrecord-attributes">documentation</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2">:</span><span class="si">%(name)s</span><span class="s2">:</span><span class="si">%(levelname)s</span><span class="s2">:</span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since we’ve set the <code class="docutils literal notranslate"><span class="pre">FileHandler</span></code>’s level to <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, we won’t see any messages logged at the <code class="docutils literal notranslate"><span class="pre">INFO</span></code> level. However, we can see the messages logged at the <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> level:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;This is a debug message&#39;</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;This is a warning message&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -707,16 +734,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Accuracy: 0.93
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Accuracy: 0.92
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Precision: 0.97
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Precision: 0.95
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Recall: 0.92
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Recall: 0.91
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:AUC: 0.93
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:AUC: 0.92
 </pre></div>
 </div>
 </div>
@@ -737,6 +764,7 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://www.tensorflow.org/tensorboard">Tensorboard</a></p></li>
 <li><p><a class="reference external" href="https://wandb.ai/site">Weights and Biases</a></p></li>
 <li><p><a class="reference external" href="https://dvc.org/">dvc</a></p></li>
+<li><p><a class="reference external" href="https://abseil.io/docs/python/guides/logging">Abseil</a></p></li>
 </ul>
 </section>
 </section>
@@ -772,7 +800,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">3.3 Hyperparameter Tuning</p>
+            <p class="prev-next-title">3.3 Hyperparameter Optimisation</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="tutorial.html" title="next page">

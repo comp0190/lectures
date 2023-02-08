@@ -6,7 +6,7 @@ Hyperparameter tuning is also a key part of managing machine learning experiment
 
 In this section, we will cover the following:
 * **Git**: understanding version control and how to use it
-* **Hyperparameter tuning**: how to find the best model for your problem
+* **Hyperparameter Optimisation**: how to find the best model for your problem
 * **Logging**: how to keep track of your experiments
 
 ## Resources
