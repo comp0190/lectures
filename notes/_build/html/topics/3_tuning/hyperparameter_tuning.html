@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.3 Hyperparameter Tuning &#8212; Artificial Intelligence for Domain-Specific Applications Project Preparation (COMP0190)</title>
+    <title>3.3 Hyperparameter Optimisation &#8212; Artificial Intelligence for Domain-Specific Applications Project Preparation (COMP0190)</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.4 Logging" href="logging.html" />
@@ -139,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Git, hyperparameter tuning, and logging
+  Git, hyperparameter optimisation, and logging
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -155,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3.3 Hyperparameter Tuning
+   3.3 Hyperparameter Optimisation
   </a>
  </li>
  <li class="toctree-l1">
@@ -243,6 +245,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/comp0190/lectures/main?urlpath=tree/notes/topics/3_tuning/hyperparameter_tuning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -310,7 +341,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/topics/3_tuning/hyperparameter_tuning.md"
+        <a href="../../_sources/topics/3_tuning/hyperparameter_tuning.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -321,7 +352,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -347,23 +378,142 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.3 Hyperparameter Optimisation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validation-of-the-model">
+     Validation of the Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-optimal-hyperparameter-setting">
+     Finding the Optimal Hyperparameter Setting
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grid-search">
+       1. Grid Search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#random-search">
+       2. Random Search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bayesian-optimisation">
+       3. Bayesian Optimisation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#caution">
+         Caution
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3.3 Hyperparameter Tuning</h1>
+                <h1>3.3 Hyperparameter Optimisation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.3 Hyperparameter Optimisation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validation-of-the-model">
+     Validation of the Model
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-optimal-hyperparameter-setting">
+     Finding the Optimal Hyperparameter Setting
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grid-search">
+       1. Grid Search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#random-search">
+       2. Random Search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bayesian-optimisation">
+       3. Bayesian Optimisation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#caution">
+         Caution
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -371,11 +521,110 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="hyperparameter-tuning">
-<h1>3.3 Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this headline">#</a></h1>
-<p>The test performance of models is often sensitive to the choice of parameters and the model’s capacity. However, it can be difficult to tell what are the best parameters to use.</p>
-<p><strong>Hyperparameter tuning</strong> is the process of finding the best parameters for a model. This is done by searching over a range of values for each parameter and evaluating the model’s performance on a validation set. The parameters that give the best performance are then used to train the final model. A hyperparameter’s value is chosen rather than learnt from the data. The process of finding the best hyperparameter values is called <strong>hyperparameter search</strong>.</p>
-<p>More information about hyperparameter tuning can be found in the <a class="reference external" href="https://moodle.ucl.ac.uk/course/view.php?id=1479">Moodle page</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hyperparameter-optimisation">
+<h1>3.3 Hyperparameter Optimisation<a class="headerlink" href="#hyperparameter-optimisation" title="Permalink to this headline">#</a></h1>
+<p>The search for optimal hyperparameters is called <em>hyperparameter optimisation</em>, i.e. the search for the hyperparameter combination for which the trained model shows the best performance for the given data set. Popular methods for doing this are Grid Search, Random Search and Bayesian Optimisation.</p>
+<p>A conventional machine-learning model has hyperparameters and parameters. Parameters of a model are learned during the training process (E.g. the weights <span class="math notranslate nohighlight">\(\theta\)</span> in linear regression). Hyperparameters on the other hand, are values that are set before the actual training to control the learning process. The hyperparameters influence the training process as much as the parameters of the model and thus the performance of the resulting model.</p>
+<section id="validation-of-the-model">
+<h2>Validation of the Model<a class="headerlink" href="#validation-of-the-model" title="Permalink to this headline">#</a></h2>
+<p>In order to determine what hyperparameters lead to the best performing model, we need to establish the notion of success (i.e. what outcome is considered as a favourable one in comparison to another). As we build models to do predictions, evaluation metrics that align with prediction performance (such as MSE for regression and Accuracy for classificaiton) can be used to determine the best hyperparameter set.</p>
+<img alt="How model validation works" src="../../_images/hypersearch.webp" />
+<p>When evaluating the predictive performance using a suitable evaluation metric, it is important to use a <em>validation set</em>. The idea behind a validation set is to allocate a fraction of the data for evaluation and not using this data during the training of the model. There are several methods one can use to do validation such as k-fold cross validation and hold out validation. These methods are pre-packaged in libraries such as Scikit-learn. More details are found <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection">here</a>.</p>
+<p>As per the figure above, we select a model family and seek to identify the best set of parameters and hyperparameters fitting the model to the data we have. While we learn the parameters through training, hyperparameters, that govern the learning process should be learned before training starts (e.g. the polynomial regression has the the polynomial degree that needs to be decided before training starts).</p>
+<p>The search for optimal hyperparameters is called <em>hyperparameter optimisation</em>, i.e. the search for the hyperparameter combination for which the trained model shows the best performance for the given data set. Popular methods for doing this are Grid Search, Random Search and Bayesian Optimisation.</p>
+</section>
+<section id="finding-the-optimal-hyperparameter-setting">
+<h2>Finding the Optimal Hyperparameter Setting<a class="headerlink" href="#finding-the-optimal-hyperparameter-setting" title="Permalink to this headline">#</a></h2>
+<p>In order to find the optimal hyperparameter settings, we could theoretically calculate the validation score for different possible hyperparameter combinations, and finally choose the hyperparameters that show the best performance in the evaluation. In this context, we will discuss three popular hyperparameter tuning techniques.</p>
+<ol class="simple">
+<li><p>Grid Search</p></li>
+<li><p>Random Search</p></li>
+<li><p>Bayesian Optimisation</p></li>
+</ol>
+<img alt="How model validation works" src="../../_images/hyper.webp" />
+<section id="grid-search">
+<h3>1. Grid Search<a class="headerlink" href="#grid-search" title="Permalink to this headline">#</a></h3>
+<p>The hyperparameter optimisation process “Grid Search” works by evaluating the validation performance of a model with respect to <em><strong>ALL</strong></em> posible hyperparameter combinations.</p>
+<img alt="Grid Search in a Picture" src="../../_images/gridsearch.webp" />
+<p>If we consider a model that has two hyperparameters, where both hyperparameters have 6 possible values, grid search creates a grid of hyperparameter combinations (36 combinations on left side figure) where all of them are evaluated (right side figure). Based on the results, the best performing combination is chosen as the final hyperparameter set.</p>
+</section>
+<section id="random-search">
+<h3>2. Random Search<a class="headerlink" href="#random-search" title="Permalink to this headline">#</a></h3>
+<p>If the available computing power is limited and a hyperparameter combination already takes several seconds or minutes, it may make sense to look for solutions that reduce the number of required data points.</p>
+<p>Random search takes a relatively lazy approach in comparison to the grid search approach by only evaluating a <em><strong>subset</strong></em> of all possible hyperparameter combinations. The subset is chosen through random sampling. In cases where the hyperparameter combination is massive (due to large number of hyperparameters and/or many possible values per each hyperparameter), grid search, while holistic, may deem computationally infeasible. In such scenarios, random search (with a good enough random sample) may be a more efficient way to find a satisfactory solution.</p>
+</section>
+<section id="bayesian-optimisation">
+<h3>3. Bayesian Optimisation<a class="headerlink" href="#bayesian-optimisation" title="Permalink to this headline">#</a></h3>
+<p>Bayesian Optimisation introduces the Surrogate Function to repsent how the hyperparameters affect performance. In this case, the Surrogate Function is a calculated regression model that is supposed to approximate the real relationship between hypeparameter values and the loss.</p>
+<p>Basically, in Bayesian Optimisation we try to reduce the uncertainty of the model step by step, with each additional sampling point calculated — usually focusing on areas where the global maximum of the (performance) function is likely to lie.</p>
+<section id="caution">
+<h4>Caution<a class="headerlink" href="#caution" title="Permalink to this headline">#</a></h4>
+<p>Sounds like an extremely effective approach in itself, although one must take into account that this procedure also results in additional computational effort and that a sufficient replication of the perfomance function cannot always be achieved. As with any other regression problem, the formation of a sufficiently good model cannot be taken for granted. While Grid Search ends with the evaluation of the model performance, Bayesian hyperparameter optimisation additionally calculates the Surrogate and Acquisition Function.</p>
+<p>Another point to consider is that Bayesian optimisation aims to sample hyperparameter combinations in a way that the uncertainty is reduced over time. This requires <em>systematic sampling</em>. As combinations are no-longer randomly sampled and the sampling relies on prior information, parallelisation becomes challening in this case.</p>
+<img alt="Bayesian Optimisation in a Picture" src="../../_images/bayes.webp" />
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Grid Search</p>
+<ul>
+<li><p>Advantages</p>
+<ul>
+<li><p>Tries all possible combinations  of hyperparameters</p></li>
+<li><p>Thorough search guarantees best results within the parameters of the search</p></li>
+<li><p>Can be done in parallel</p></li>
+</ul>
+</li>
+<li><p>Disadvantages</p>
+<ul>
+<li><p>Computationally expensive</p></li>
+<li><p>Limit search space is compuationally feasible</p></li>
+<li><p>Not effective if the search space is not set appropriately</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Random Search</p>
+<ul>
+<li><p>Advantages</p>
+<ul>
+<li><p>Only uses a subset possible combinations of hyperparameters sampled randomly</p></li>
+<li><p>Can do a statistically robust search in a wide space of hyperparameters</p></li>
+<li><p>Computationally efficient</p></li>
+<li><p>Can be done in parallel</p></li>
+</ul>
+</li>
+<li><p>Disadvantages</p>
+<ul>
+<li><p>Not effective if the search space is not set appropriately</p></li>
+<li><p>Not effective if a good size of samples are not obtained</p></li>
+<li><p>Can miss a promising hyperparamter region by chance</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bayesian Optimisation</p>
+<ul>
+<li><p>Advantages</p>
+<ul>
+<li><p>Uses a subset possible combinations of hyperparameters sampled systematically</p></li>
+<li><p>Each trial gives a lot of information about the search space</p></li>
+<li><p>Computes a surrogate fuinction that proxy the relationship between the values and the performance</p></li>
+</ul>
+</li>
+<li><p>Disadvantages</p>
+<ul>
+<li><p>Each sample step is computationally expensive</p></li>
+<li><p>The surrogate function can underfit leading to sub optimal results</p></li>
+<li><p>Cannot be done in parallel</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">

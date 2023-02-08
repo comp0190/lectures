@@ -71,9 +71,11 @@ logging.error('This is an error message')
 logging.critical('This is a critical message')
 
 
+# We can log the messages to multiple places using handlers. By default, the logging library will use a `StreamHandler` to direct log messages to the console. A logger can have multiple handlers, and each handler can have a different level of severity.
+# 
 # To log messages to a file, we can use the `FileHandler`. We can then look at the contents later on to analyse the results of our experiments.
 # 
-# However, if we are checking for outputs on the console, this will not display the messages. To display the messages on the console, we can use the `StreamHandler`.
+# However, if we are checking for outputs on the console, this will redirect all the messages to the file. To display the messages on the console again, we can initialise another `StreamHandler`.
 # 
 # In the following example, we will log the warning messages to a file. Note as we are using a Jupyter notebook, there is no need to use the `StreamHandler` as it will duplicate the messages.
 
@@ -87,14 +89,40 @@ logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 
+# Create a stream handler
+# Note: Commented out for this demo because it causes duplicate output in Jupyter notebooks
+# ch = logging.StreamHandler()
+# ch.setLevel(logging.DEBUG)
+# logger.addHandler(ch)
+
 # Create a file handler and set level to warning
 fh = logging.FileHandler('test.log')
 fh.setLevel(logging.WARNING)
-
 # Add handlers to logger
 logger.addHandler(fh)
 
-# Log code
+
+# We can also change how we format the messages. By default, the logging library will log messages in the following format: `level:logger_name:message`. We can change this by using the `format` argument:
+# 
+# In the below example, we will reformat the message to include the following:
+# * `%(asctime)s` - The date and time of the message.
+# * `%(name)s` - The name of the logger.
+# * `%(levelname)s` - The level of the message.
+# * `%(message)s` - The logged message.
+# 
+# For more information on how to format the messages, see the [documentation](https://docs.python.org/3/library/logging.html#logrecord-attributes).
+
+# In[4]:
+
+
+fh.setFormatter(logging.Formatter("%(asctime)s:%(name)s:%(levelname)s:%(message)s"))
+
+
+# Since we've set the `FileHandler`'s level to `WARNING`, we won't see any messages logged at the `INFO` level. However, we can see the messages logged at the `WARNING` level:
+
+# In[5]:
+
+
 logger.debug('This is a debug message')
 logger.warning('This is a warning message')
 
@@ -103,7 +131,7 @@ logger.warning('This is a warning message')
 # 
 # Let's train a decision tree on the [breast cancer](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html) dataset. We'll log the time, tree depth, accuracy, precision and ROC AUC to a file.
 
-# In[4]:
+# In[6]:
 
 
 import logging
@@ -116,7 +144,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 # Set up the logger:
 
-# In[5]:
+# In[7]:
 
 
 logger = logging.getLogger()
@@ -131,7 +159,7 @@ handler.setFormatter(logging.Formatter("%(asctime)s:%(name)s:%(levelname)s:%(mes
 
 # Load the data
 
-# In[6]:
+# In[8]:
 
 
 data = load_breast_cancer()
@@ -140,7 +168,7 @@ X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, rand
 
 # Set the hyperparameters. In this case, we're only going to configure the tree depth.
 
-# In[7]:
+# In[9]:
 
 
 # Set the hyperparameters
@@ -151,7 +179,7 @@ logger.info(f"Max depth: {MAX_DEPTH}")
 
 # Train the model!
 
-# In[8]:
+# In[10]:
 
 
 # Train the model
@@ -161,7 +189,7 @@ clf = clf.fit(X_train, y_train)
 
 # ...and evaluate - we can then check the outputs in `my_output.log`.
 
-# In[9]:
+# In[11]:
 
 
 # Evaluate the model
@@ -190,3 +218,4 @@ logger.info(f"AUC: {auc:.2f}")
 # * [Tensorboard](https://www.tensorflow.org/tensorboard)
 # * [Weights and Biases](https://wandb.ai/site)
 # * [dvc](https://dvc.org/)
+# * [Abseil](https://abseil.io/docs/python/guides/logging)

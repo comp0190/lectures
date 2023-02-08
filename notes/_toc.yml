@@ -10,7 +10,7 @@ parts:
   - caption: "Ethics in artificial intelligence"
     chapters:
       - file: topics/2_ethics/overview
-  - caption: "Git, hyperparameter tuning, and logging"
+  - caption: "Git, hyperparameter optimisation, and logging"
     chapters:
       - file: topics/3_tuning/overview
       - file: topics/3_tuning/git
