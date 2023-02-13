@@ -512,8 +512,8 @@ title="Print to PDF"
 </section>
 <section id="developing">
 <h2>Developing<a class="headerlink" href="#developing" title="Permalink to this headline">#</a></h2>
-<p>There are different types of Git workflows. The most basic workflow is to have one <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and to make changes to that. This is fine for small projects.</p>
-<p>For larger projects, it is better to have a <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and a <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. The <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch is where you make changes to your code. When you are ready to release a new version of your code, you merge the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
+<p>There are different types of Git workflows. The most basic workflow is to have one <code class="docutils literal notranslate"><span class="pre">main/master</span></code> branch and to make changes to that. This is fine for small projects.</p>
+<p>For larger projects, it is better to have a <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and a <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. The <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch is where you make changes to your code. When you are ready to release a new version of your code, you merge the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
@@ -538,7 +538,7 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
 </pre></div>
 </div>
-<p>This will initialise a Git repository and name the current branch <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+<p>This will initialise a Git repository and name the current branch <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <p>If you want to retrieve an existing repository from online, you can do so with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;repository_url&gt;
 </pre></div>
@@ -573,7 +573,7 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 </pre></div>
 </div>
 <p>This will show us the status of the repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On<span class="w"> </span>branch<span class="w"> </span>master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On<span class="w"> </span>branch<span class="w"> </span>main
 
 No<span class="w"> </span>commits<span class="w"> </span>yet
 
@@ -599,7 +599,7 @@ Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </sp
 </div>
 <p>We can check we are on the right branch by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>. This will list all of the branches in the repository. The branch with a <code class="docutils literal notranslate"><span class="pre">*</span></code> next to it is the current branch.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">develop</span>
-  <span class="n">master</span>
+  <span class="n">main</span>
 </pre></div>
 </div>
 <p>If you make changes to <code class="docutils literal notranslate"><span class="pre">my_file.txt</span></code> using your favourite text editor, you can see the differences between the current version of the file and the version in the repository with:</p>
@@ -608,20 +608,20 @@ Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </sp
 </div>
 <p>We’ll commit the changes to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">my_file.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Add</span> <span class="pre">some</span> <span class="pre">text</span> <span class="pre">to</span> <span class="pre">my_file.txt&quot;</span></code>.</p>
 <p>Then we can switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
 </pre></div>
 </div>
-<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">my_file.txt</span></code>, we will see that there are no differences between the current version of the file and the version in the repository. This is because we have not made any changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. If you want to merge the changes from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, you can do so with:</p>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">my_file.txt</span></code>, we will see that there are no differences between the current version of the file and the version in the repository. This is because we have not made any changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. If you want to merge the changes from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, you can do so with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>develop
 </pre></div>
 </div>
-<p>Then if you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> again, you can see the commit from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch has been added into the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
-<p>Finally, if you are happy with your changes, you can push them to a remote repository. <code class="docutils literal notranslate"><span class="pre">origin</span></code> refers to the remote repository in the below command. If you have not set up a remote repository, set up a project on a website with github. After you’ve done that, you integrate the remote repository with your local repository with:</p>
+<p>Then if you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> again, you can see the commit from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch has been added into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<p>Finally, if you are happy with your changes, you can push them to a remote repository. <code class="docutils literal notranslate"><span class="pre">origin</span></code> refers to the remote repository in the below command. If you have not set up a remote repository, set up a project on a website with GitHub. After you’ve done that, you integrate the remote repository with your local repository with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;repository_url&gt;
 </pre></div>
 </div>
 <p>To push the changes, you can then do this with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>develop
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <p>Note you do not need to use the command line to use Git. There are many graphical user interfaces (GUIs) available for Git. You can use the command line, or a GUI, whichever you prefer. vscode for example has a built in Git GUI (documentation <a class="reference external" href="https://code.visualstudio.com/docs/sourcecontrol/overview">here</a>).</p>
