@@ -1,4 +1,4 @@
-# 3.2 Git
+# 2.2 Git
 
 Git is a type of version control system. It allows you to keep track of changes to your code and to collaborate with others.
 
@@ -26,9 +26,9 @@ You should add all of your code to Git. Things you should not add to Git include
 
 ## Developing
 
-There are different types of Git workflows. The most basic workflow is to have one `main` branch and to make changes to that. This is fine for small projects.
+There are different types of Git workflows. The most basic workflow is to have one `main/master` branch and to make changes to that. This is fine for small projects.
 
-For larger projects, it is better to have a `master` branch and a `develop` branch. The `develop` branch is where you make changes to your code. When you are ready to release a new version of your code, you merge the `develop` branch into the `master` branch.
+For larger projects, it is better to have a `main` branch and a `develop` branch. The `develop` branch is where you make changes to your code. When you are ready to release a new version of your code, you merge the `develop` branch into the `main` branch.
 
 ## Example
 
@@ -61,7 +61,7 @@ Initialise the directory with:
 git init
 ```
 
-This will initialise a Git repository and name the current branch `master`.
+This will initialise a Git repository and name the current branch `main`.
 
 If you want to retrieve an existing repository from online, you can do so with:
 
@@ -112,7 +112,7 @@ git status
 This will show us the status of the repository:
 
 ```bash
-On branch master
+On branch main
 
 No commits yet
 
@@ -148,7 +148,7 @@ We can check we are on the right branch by running `git branch`. This will list 
 
 ```
 * develop
-  master
+  main
 ```
 
 If you make changes to `my_file.txt` using your favourite text editor, you can see the differences between the current version of the file and the version in the repository with:
@@ -162,18 +162,18 @@ We'll commit the changes to the `develop` branch with `git add my_file.txt` and 
 Then we can switch back to the `main` branch with:
 
 ```bash
-git checkout master
+git checkout main
 ```
 
-If we run `git diff my_file.txt`, we will see that there are no differences between the current version of the file and the version in the repository. This is because we have not made any changes to the `main` branch. If you want to merge the changes from the `develop` branch into the `master` branch, you can do so with:
+If we run `git diff my_file.txt`, we will see that there are no differences between the current version of the file and the version in the repository. This is because we have not made any changes to the `main` branch. If you want to merge the changes from the `develop` branch into the `main` branch, you can do so with:
 
 ```bash
 git merge develop
 ```
 
-Then if you run `git log` again, you can see the commit from the `develop` branch has been added into the `master` branch.
+Then if you run `git log` again, you can see the commit from the `develop` branch has been added into the `main` branch.
 
-Finally, if you are happy with your changes, you can push them to a remote repository. `origin` refers to the remote repository in the below command. If you have not set up a remote repository, set up a project on a website with github. After you've done that, you integrate the remote repository with your local repository with:
+Finally, if you are happy with your changes, you can push them to a remote repository. `origin` refers to the remote repository in the below command. If you have not set up a remote repository, set up a project on a website with GitHub. After you've done that, you integrate the remote repository with your local repository with:
 
 ```bash
 git remote add origin <repository_url>
@@ -182,7 +182,7 @@ git remote add origin <repository_url>
 To push the changes, you can then do this with:
 
 ```bash
-git push origin develop
+git push origin main
 ```
 
 Note you do not need to use the command line to use Git. There are many graphical user interfaces (GUIs) available for Git. You can use the command line, or a GUI, whichever you prefer. vscode for example has a built in Git GUI (documentation [here](https://code.visualstudio.com/docs/sourcecontrol/overview)).

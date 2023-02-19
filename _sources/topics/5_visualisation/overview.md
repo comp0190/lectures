@@ -1,4 +1,4 @@
-# 5.1 Overview
+# 4.1 Overview
 
 Visualising data is an essential aspect of writing your dissertation. It allows you to communicate your findings and build a narrative.
 
