@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 3.3 Hyperparameter Optimisation
+# # 2.3 Hyperparameter Optimisation
 
 # The search for optimal hyperparameters is called *hyperparameter optimisation*, i.e. the search for the hyperparameter combination for which the trained model shows the best performance for the given data set. Popular methods for doing this are Grid Search, Random Search and Bayesian Optimisation. 
 # 

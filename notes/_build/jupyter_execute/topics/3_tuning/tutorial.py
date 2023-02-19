@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 3.5 Tutorial
+# # 2.5 Tutorial
 # 
 # In this tutorial we will put into practice the concepts we have learned in the previous sections.
 # 

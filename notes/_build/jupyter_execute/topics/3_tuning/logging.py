@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 3.4 Logging
+# # 2.4 Logging
 # 
 # Why can't we just `print()` all of our outputs? Although this is a simple solution, it can be difficult to keep track of all of the information we need. This is especially the case when we want to run lots of experiments.
 # 

@@ -1,4 +1,4 @@
-# 3.2 Git
+# 2.2 Git
 
 Git is a type of version control system. It allows you to keep track of changes to your code and to collaborate with others.
 
