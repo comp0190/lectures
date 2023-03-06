@@ -20,3 +20,4 @@ parts:
       - file: topics/5_visualisation/graph_crimes
       - file: topics/5_visualisation/visualisation_types
       - file: topics/5_visualisation/figure_design
+      - file: topics/5_visualisation/tutorial

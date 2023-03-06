@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 3.3 Types of visualisations
+# # 3.3 Types of Visualisations
 # 
 # The choice of graph we should use depends on the type of data we are visualising. In this section, we will cover the most common types of graphs and when to use them.
 # 

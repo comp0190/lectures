@@ -1,4 +1,4 @@
-# 3.2 Graph crimes
+# 3.2 Graph Crimes
 
 ## Example 1
 

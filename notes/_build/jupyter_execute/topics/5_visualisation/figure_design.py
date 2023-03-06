@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 3.4 Figure design
+# # 3.4 Figure Design
 # 
 # In this section, we will look how adjusting figure components can make figures clearer and more understandable.
 # 
