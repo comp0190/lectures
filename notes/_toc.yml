@@ -21,3 +21,8 @@ parts:
       - file: topics/5_visualisation/visualisation_types
       - file: topics/5_visualisation/figure_design
       - file: topics/5_visualisation/tutorial
+  - caption: "Cloud, Big Data, and docker"
+    chapters:
+      - file: topics/4_cloud/overview
+      - file: topics/4_cloud/running_experiments
+      - file: topics/4_cloud/homework
