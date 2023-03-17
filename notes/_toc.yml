@@ -26,3 +26,4 @@ parts:
       - file: topics/4_cloud/overview
       - file: topics/4_cloud/running_experiments
       - file: topics/4_cloud/homework
+      - file: topics/4_cloud/tutorial

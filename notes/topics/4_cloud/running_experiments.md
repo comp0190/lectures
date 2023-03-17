@@ -1,4 +1,5 @@
-# 4.2 Information about available department infrastructure
+# 4.2 Information About Available Department Infrastructure
+
 ## How to get your project experiments running
 
 There are many different way to get your experiments running during your thesis project. They range from options that have more control over ones that cost you money. 
