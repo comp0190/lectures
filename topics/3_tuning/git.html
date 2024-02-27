@@ -549,8 +549,8 @@ title="Print to PDF"
 <h3>Initialising your repository<a class="headerlink" href="#initialising-your-repository" title="Permalink to this headline">#</a></h3>
 <p>To create a new repository, you can either initialise Git in an existing directory, or create a new directory and initialise Git there. You can also retrieve an existing repository. In this example we will create a new directory.</p>
 <p>Name the new directory called <code class="docutils literal notranslate"><span class="pre">my_project</span></code> and navigate to it with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir my_project
-<span class="nb">cd</span> my_project
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>my_project
+<span class="nb">cd</span><span class="w"> </span>my_project
 </pre></div>
 </div>
 <p>We can check we are in the right directory with:</p>
@@ -558,20 +558,20 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Initialise the directory with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
 </pre></div>
 </div>
 <p>This will initialise a Git repository and name the current branch <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <p>If you want to retrieve an existing repository from online, you can do so with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone &lt;repository_url&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;repository_url&gt;
 </pre></div>
 </div>
 </section>
 <section id="configuring-your-git-details">
 <h3>Configuring your git details<a class="headerlink" href="#configuring-your-git-details" title="Permalink to this headline">#</a></h3>
 <p>Before you start using Git, you’ll need to configure your Git details. You can do this with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
-git config --global user.email <span class="s2">&quot;your@email.com&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your@email.com&quot;</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--global</span></code> flag means the configurations will apply to all of your repositories. If you don’t want to use the <code class="docutils literal notranslate"><span class="pre">--global</span></code> flag, you can omit it and the configurations will only apply to the current repository.</p>
@@ -579,45 +579,45 @@ git config --global user.email <span class="s2">&quot;your@email.com&quot;</span
 <section id="adding-files">
 <h3>Adding files<a class="headerlink" href="#adding-files" title="Permalink to this headline">#</a></h3>
 <p>Now that we have initialised our repository, we can add some files. In Unix operating systems we can create a new file with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch my_file.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>my_file.txt
 </pre></div>
 </div>
 <p>For Windows users, you can create a new file with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>echo. &gt; my_file.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>echo.<span class="w"> </span>&gt;<span class="w"> </span>my_file.txt
 </pre></div>
 </div>
 <p>We can check that the file has been created by checking the contents of the directory with <code class="docutils literal notranslate"><span class="pre">ls</span></code> for Unix users and <code class="docutils literal notranslate"><span class="pre">dir</span></code> for Windows users.</p>
 <p>Now that we have created a file, we need add it to the repository so that Git can track it. We can do this with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add my_file.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>my_file.txt
 </pre></div>
 </div>
 <p>We can check that the file has been added with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
 <p>This will show us the status of the repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On branch main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On<span class="w"> </span>branch<span class="w"> </span>main
 
-No commits yet
+No<span class="w"> </span>commits<span class="w"> </span>yet
 
-Changes to be committed:
-  <span class="o">(</span>use <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>committed:
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span>
 
-  new file:   my_file.txt
+<span class="w">  </span>new<span class="w"> </span>file:<span class="w">   </span>my_file.txt
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will tell us which files have been added, which files have been modified, and which files have been deleted. If you are happy with your additions, the next step is to commit them. You can think of committing as taking a snapshot of your code. Commit your changes with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;Add my_file.txt&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add my_file.txt&quot;</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag allows you to add a message to your commit. This is useful for keeping track of what changes you have made. You can also commit without a message, but you will be prompted to add one when you commit. It is good practice to add an informative message to your commits, so if you want to track the history you know what changes have been made.</p>
 <p>To view the history of your commits, you can run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
 </div>
 <p>This will show you the history of your commits. You can use the arrow keys to scroll through the history if the list of commits is long. To exit, press <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 <p>Let’s create a new branch to keep track of different versions of our code. One way of using branches is to keep track of various experiments. We will create a new branch called <code class="docutils literal notranslate"><span class="pre">develop</span></code> and switch to it with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b develop
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>develop
 </pre></div>
 </div>
 <p>We can check we are on the right branch by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>. This will list all of the branches in the repository. The branch with a <code class="docutils literal notranslate"><span class="pre">*</span></code> next to it is the current branch.</p>
@@ -626,25 +626,25 @@ Changes to be committed:
 </pre></div>
 </div>
 <p>If you make changes to <code class="docutils literal notranslate"><span class="pre">my_file.txt</span></code> using your favourite text editor, you can see the differences between the current version of the file and the version in the repository with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git diff my_file.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff<span class="w"> </span>my_file.txt
 </pre></div>
 </div>
 <p>We’ll commit the changes to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">my_file.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Add</span> <span class="pre">some</span> <span class="pre">text</span> <span class="pre">to</span> <span class="pre">my_file.txt&quot;</span></code>.</p>
 <p>Then we can switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
 </pre></div>
 </div>
 <p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">my_file.txt</span></code>, we will see that there are no differences between the current version of the file and the version in the repository. This is because we have not made any changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. If you want to merge the changes from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, you can do so with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge develop
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>develop
 </pre></div>
 </div>
 <p>Then if you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> again, you can see the commit from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch has been added into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 <p>Finally, if you are happy with your changes, you can push them to a remote repository. <code class="docutils literal notranslate"><span class="pre">origin</span></code> refers to the remote repository in the below command. If you have not set up a remote repository, set up a project on a website with GitHub. After you’ve done that, you integrate the remote repository with your local repository with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin &lt;repository_url&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;repository_url&gt;
 </pre></div>
 </div>
 <p>To push the changes, you can then do this with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <p>Note you do not need to use the command line to use Git. There are many graphical user interfaces (GUIs) available for Git. You can use the command line, or a GUI, whichever you prefer. vscode for example has a built in Git GUI (documentation <a class="reference external" href="https://code.visualstudio.com/docs/sourcecontrol/overview">here</a>).</p>
@@ -673,8 +673,8 @@ Changes to be committed:
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
-            path: "./topics/3_tuning"
+            kernelName: "python3",
+            path: "./topics\3_tuning"
         },
         predefinedOutput: true
     }
