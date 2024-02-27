@@ -7,4 +7,4 @@ A literature review in research methodology is a comprehensive analysis and eval
 * **Identify gaps** in existing knowledge.
 * **Establish a basis** for the current study.
 
-More information about conducting a literature review can be found on the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=1479).
+More information about conducting a literature review can be found on the [Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=33702).
