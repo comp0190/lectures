@@ -11,4 +11,4 @@ This course is designed to help you prepare for your final project/dissertation.
 
 ## Additional links
 * [Module page](https://www.ucl.ac.uk/module-catalogue/modules/artificial-intelligence-for-domain-specific-applications-project-preparation-COMP0190)
-* [Moodle](https://moodle.ucl.ac.uk/course/view.php?id=1479) (login required)
+* [Moodle](https://moodle.ucl.ac.uk/course/view.php?id=33702) (login required)
